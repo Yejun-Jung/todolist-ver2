@@ -1,26 +1,24 @@
 import React from 'react'
-import './TodoItem.css'
+import "./TodoItem.css"
+import { useTodoStore } from '../contexts/TodoContext'
+const TodoItem = ({
+  id,
+  isDone,
+  content,
+  date,
+}) => {
 
-const TodoItem = ({id, isDone, content, date, onUpdate, onDelete}) => {
+  const {toggleTodo, deleteTodo}= useTodoStore()
 
-    const onChangeCheckbox=()=>{
-        onUpdate(id)
-    }
-
-    const onClickDelete=()=>{
-        onDelete(id)
-    }
 
   return (
     <div className={`TodoItem ${isDone ? 'done' : ''}`}>
-        <input 
-            type="checkbox" 
-            checked={isDone} 
-            onChange={onChangeCheckbox} 
-        />
-        <div className="content">{content}</div>
-        <div className="date">{new Date(date).toLocaleDateString()}</div>
-        <button onClick={onClickDelete}>삭제</button>
+      <input type="checkbox" 
+      checked={isDone} 
+      onChange={()=>toggleTodo(id)} />
+      <div className="content">{content}</div>
+      <div className="date">{new Date(date).toLocaleDateString()}</div>
+      <button onClick={()=>deleteTodo(id)}>삭제</button>
     </div>
   )
 }
