@@ -1,5 +1,5 @@
 export const ACTIONS={
-        INIT:'INT',
+        INIT:'INIT',
         CREATE:'CREATE',
         TOGGLE:'TOGGLE',
         DELETE:'DELETE'
