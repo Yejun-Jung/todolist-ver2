@@ -11,9 +11,11 @@ useReducer와 Context API를 활용하여 아키텍처를 최적화한 할 일 �
 - LocalStorage 자동 동기화
 
 ## 📁 폴더 구조
+```
 src/
 ├── components/   # UI 컴포넌트 (Header, Editor, List, Item)
 └── contexts/     # 상태 관리 모듈 (Context, Actions, Reducer, Storage)
+```
 
 
 ## 🛠 사용 기술
